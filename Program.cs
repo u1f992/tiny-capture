@@ -10,7 +10,7 @@ namespace tiny_capture
         {
             if(args.Length != 1 || !Microsoft.VisualBasic.Information.IsNumeric(args[0]))
             {
-                Console.WriteLine("Usage: .\\tiny-capture.exe <INDEX>");
+                Console.WriteLine("Usage: tiny-capture <INDEX>");
                 return 1;
             }
 
