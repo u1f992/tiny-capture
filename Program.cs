@@ -14,7 +14,8 @@ namespace tiny_capture
                 return 1;
             }
 
-            VideoCapture capture = new VideoCapture(args[0]);
+            int index = int.Parse(args[0]);
+            VideoCapture capture = new VideoCapture(index);
             if(!capture.IsOpened())
             {
                 Console.WriteLine("The specified device index is invalid.");
@@ -37,14 +38,15 @@ namespace tiny_capture
             catch
             {
                 Console.WriteLine("Failed to save image.");
-                capture.Dispose();
                 frame.Dispose();
+                capture.Dispose();
                 return 1;
             }
 
             Console.WriteLine(fn);
-            capture.Dispose();
+
             frame.Dispose();
+            capture.Dispose();
 
             return 0;
         }
