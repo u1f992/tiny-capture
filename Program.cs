@@ -8,9 +8,9 @@ namespace tiny_capture
     {
         static int Main(string[] args)
         {
-            if(args.Length != 1 || !Microsoft.VisualBasic.Information.IsNumeric(args[0]))
+            if(args.Length != 2 || !Microsoft.VisualBasic.Information.IsNumeric(args[0]))
             {
-                Console.WriteLine("Usage: tiny-capture <INDEX>");
+                Console.WriteLine("Usage: tiny-capture <INDEX> <PATH>");
                 return 1;
             }
 
@@ -29,7 +29,7 @@ namespace tiny_capture
             Mat frame = new Mat();
             capture.Read(frame);
 
-            string fn = DateTime.Now.ToString("yyyyMMddHHmmss") + ".png";
+            string fn = args[1];
 
             try
             {
